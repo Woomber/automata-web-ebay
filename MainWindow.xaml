@@ -5,29 +5,53 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutomataWebEbay"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Autómata Web Ebay - Yael Chavoya" Height="450" Width="800" MinWidth="400" MinHeight="250">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="50" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0" Grid.Row="0" Margin="15" Height="40">
+        <Grid Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Margin="15" Height="40">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="200"/>
-                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="130"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="20"/>
             </Grid.RowDefinitions>
-            <TextBox Text="" Grid.Column="0" IsEnabled="False"/>
-            <Button Content="Seleccionar archivo..." Grid.Column="1" Margin="20 0 0 0" Click="Event_SelectFile"/>
-            <Button Content="Iniciar búsqueda" Grid.Column="2" Margin="20 0 0 0" IsDefault="True" Click="Event_Start"/>
+            <TextBox Grid.Column="0" IsReadOnly="True">
+                <TextBox.Text>
+                    <Binding Path="Ruta" Mode="OneWay"/>
+                </TextBox.Text>
+            </TextBox>
+            <Button Content="Seleccionar archivo..." Grid.Column="1" Margin="10 0 0 0" Click="Event_SelectFile"/>
         </Grid>
+
+        <TextBox VerticalScrollBarVisibility="Visible" IsReadOnly="True" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True">
+            <TextBox.Text>
+                <Binding Path="Texto" Mode="OneWay" />
+            </TextBox.Text>
+        </TextBox>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Margin="10">
+            <Label>Web: </Label>
+            <Label Content="{Binding NumWeb, Mode=OneWay}"></Label>
+            <Label> veces</Label>
+        </StackPanel>
+
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" Margin="10">
+            <Label>Ebay: </Label>
+            <Label Content="{Binding NumEbay, Mode=OneWay}"></Label>
+            <Label> veces</Label>
+        </StackPanel>
+
     </Grid>
     
 </Window>
