@@ -5,11 +5,11 @@ using AutomatasFinitos.Modelos;
 
 namespace AutomatasFinitos.Procesos
 {
-    static class AutomataWebEbay
+    static class EvaluarAutomata
     {
         private static readonly Automata automata;
 
-        static AutomataWebEbay() {
+        static EvaluarAutomata() {
             automata = new Automata();
 
             var _1 = new Estado();

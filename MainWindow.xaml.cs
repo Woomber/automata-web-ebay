@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutomatasFinitos.Procesos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -106,7 +107,7 @@ namespace AutomataWebEbay
                     Texto = "";
                 }
 
-                var dict = AutomatasFinitos.Procesos.AutomataWebEbay.Evaluar(Texto);
+                var dict = EvaluarAutomata.Evaluar(Texto);
 
                 if (dict.TryGetValue("web", out uint nweb))
                 {

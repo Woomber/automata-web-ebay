@@ -9,7 +9,7 @@ using System.Windows;
 namespace AutomataWebEbay
 {
     /// <summary>
-    /// Interaction logic for App.xaml
+    /// Aplicación que cuenta la cantidad de veces que aparecen las palabras "web" y "ebay"
     /// </summary>
     public partial class App : Application
     {
